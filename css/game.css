@@ -44,13 +44,35 @@ legend{
 	margin-left: 1em;
 	padding: 0.2em 0.8em;
 }
+
 fieldset{
 	border: 5px black solid;
 	margin: 1em;
 }
+
 table tr td:last-child{
 	text-align: right;
 }
+
 table{
 	width: 100%;
+}
+
+#questt tr td{
+	text-align: center ;
+}
+
+.notifier{
+	background-color: rgba(0,255,0,0.6);
+	width: 60%;
+	height: 4em;
+	border: 3px darkgreen solid;
+	position: fixed;
+	z-index: 999;
+	top: calc(50%-2em);
+	left: 20%;
+	text-align: center;
+	line-height: 4em;
+	color: black;
+	cursor: pointer;
 }

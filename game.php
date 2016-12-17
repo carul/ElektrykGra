@@ -1,6 +1,14 @@
 <?php session_start(); ?>
 <html>
 <head>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".notifier").click(function(){
+			$(this).css("display", "none");
+		});
+	});
+</script>
 <?php
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
@@ -97,6 +105,15 @@
 		}
 		else{
 			echo "Podana strona nie została znaleziona.";
+		}
+	}
+	if(isset($_GET['msg'])){
+		$msg = $_GET['msg'];
+		if($msg == "missuccess"){
+			echo "<div class=\"notifier\">Misja rozpoczęta!</div>";
+		}
+		if($msg == "notyet"){
+			echo "<div class=\"notifier\">Jesteś jeszcze na misji, nie możesz rozpocząć kolejnej!</div>";
 		}
 	}
 ?>
