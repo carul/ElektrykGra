@@ -11,7 +11,7 @@
 		return $basic;
 	}
 	if(isset($_SESSION['user_name']) and isset($_GET['id'])){
-		$db = new mysqli("localhost", "root", "kura", "elektryk");
+		include "database.php";
 		$playerid = $db->query("SELECT * FROM users WHERE login='".$_SESSION['user_name']."'");
 		$playerid = $playerid->fetch_row();
 		$playerid = $playerid[0];
@@ -55,13 +55,13 @@
 		$t1*=-1;
 		$t2 = $player[1]+1;
 		if ($limit < $player[2])
-			$db->query("UPDATE playerdata SET EXPERIENCE='$t1', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp', LEVEL='$t2' WHERE ID='$playerid'");
+			$db->query("UPDATE $userdataname SET EXPERIENCE='$t1', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp', LEVEL='$t2' WHERE ID='$playerid'");
 		else
-			$db->query("UPDATE playerdata SET EXPERIENCE='$experience', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp' WHERE ID='$playerid'");
-		$player = $db->query("SELECT * FROM playerdata WHERE ID ='$playerid'");
+			$db->query("UPDATE $userdataname SET EXPERIENCE='$experience', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp' WHERE ID='$playerid'");
+		$player = $db->query("SELECT * FROM $userdataname WHERE ID ='$playerid'");
 		$player = $player->fetch_row();
 		if ($limit < $player[2])
-			$db->query("UPDATE playerdata SET EXPERIENCE='$t1', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp', LEVEL='$t2' WHERE ID='$playerid'");
+			$db->query("UPDATE $userdataname SET EXPERIENCE='$t1', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp', LEVEL='$t2' WHERE ID='$playerid'");
 		$msg = "missuccess";
 		header("Location:../game.php?page=missions&msg=$msg");
 		exit();

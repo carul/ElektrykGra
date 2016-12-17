@@ -13,14 +13,12 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	$login = $_SESSION['user_name'];
-	$db = new mysqli("localhost", "root", "kura", "elektryk");
-	$playerid = $db->query("SELECT * FROM users WHERE login='$login'");
+	include "php/database.php";
+	$playerid = $db->query("SELECT * FROM $userbasename WHERE login='$login'");
 	$playerid = $playerid->fetch_row();
 	$playerid = $playerid[0];
-	if($db->connect_error)
-		die("Błąd z łaczeniem z baza danych: ". $db->connect_error);
 	if(isset($_SESSION['user_name'])){
-		$checkfirstlogin = $db->query("SELECT * FROM users WHERE login='$login'");
+		$checkfirstlogin = $db->query("SELECT * FROM $userbasename WHERE login='$login'");
 		$t = $checkfirstlogin->fetch_row();
 		if($t[4] == true){
 			//first login things'
@@ -29,8 +27,8 @@
 			$timestamp = $timestamp->getTimestamp();
 			$t = $t[0];
 			echo $t;
- 			$db->query("INSERT INTO playerdata (ID, LEVEL, EXPERIENCE, GOLD, RANK, REGISTERDATE, ACHIEVEMENTS, LASTQUESTFINISH) VALUES ('".$t."', '1', '0', '100','0', '".$nowFormat."', '', '".$timestamp."')");
-			$db->query("UPDATE users SET firstlogin='0' WHERE login='$login'");
+ 			$db->query("INSERT INTO $userdataname (ID, LEVEL, EXPERIENCE, GOLD, RANK, REGISTERDATE, ACHIEVEMENTS, LASTQUESTFINISH) VALUES ('".$t."', '1', '0', '100','0', '".$nowFormat."', '', '".$timestamp."')");
+			$db->query("UPDATE $userbasename SET firstlogin='0' WHERE login='$login'");
 			header("Location:game.php");
 			exit();
 		}
@@ -58,6 +56,9 @@
 	function gonews(){
 		window.location.href = 'game.php?page=news';
 	}
+	function goboard(){
+		window.location.href = 'game.php?page=board';
+	}
 </script>
 </head>
 <body>
@@ -77,7 +78,7 @@
 			}
 			return $basic;
 		}
-		$pdata = $db->query("SELECT * FROM playerdata WHERE ID ='$playerid'");
+		$pdata = $db->query("SELECT * FROM $userdataname WHERE ID ='$playerid'");
 		$pdata = $pdata->fetch_row();
 		$basicexp = 100;
 	?>
@@ -91,13 +92,16 @@
 		Biblioteka
 	</div>
 	<div class="mbtn" onclick="goranking()">
-		Najlepsi uczniowie
+		Ranking
 	</div>
 	<div class="mbtn" onclick="golout()">
 		Wyloguj
 	</div>
 	<div class="mbtn" onclick="gonews()">
 		Nowości
+	</div>
+	<div class="mbtn" onclick="goboard()">
+		Tablica atencji
 	</div>
 </div>
 <div id="content">
@@ -117,6 +121,12 @@
 		}
 		elseif($_GET["page"] == "news"){
 			echo "<div id=\"twrapfull\"><iframe src=\"news.html\" width=\"100%\" height=\"100%\"></iframe></div>";
+		}
+		elseif($_GET["page"] == "showplayer"){
+			include "php/showplayer.php";
+		}
+		elseif($_GET["page"] == "board"){
+			include "php/board.php";
 		}
 		else{
 			echo "Podana strona nie została znaleziona.";

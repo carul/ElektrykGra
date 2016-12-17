@@ -1,3 +1,3 @@
 <?php
-	echo "shop";
+	echo "Sekcja nie zaimplementowana";
 ?>

@@ -48,7 +48,7 @@ elseif($pdata[4] <= -6000){
 $color = "<span style=\"color: $color\">";
 echo "<fieldset>";
 echo "<legend>". $login . "</legend>" ;
-echo "<table>
+echo "<table id=\"playerinfo\">
 	<tr>
 		<td>
 			Poziom:
