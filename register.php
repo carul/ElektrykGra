@@ -24,7 +24,7 @@
 		$r_mail = $_POST["r_mail"];
 		$checkname = $db->query("SELECT * FROM users WHERE login = '".$r_name."'");
 		if($checkname->num_rows < 1){
-			if( $db->query("INSERT INTO users (ID, login, password, email) VALUES ('$am', '$r_name', '$r_password', '$r_mail')") == true ) 
+			if( $db->query("INSERT INTO users (ID, login, password, email, firstlogin) VALUES ('$am', '$r_name', '$r_password', '$r_mail', '1')") == true ) 
 				$report = "positive";
 			else
 				$report = "negative";
@@ -33,6 +33,7 @@
 			$report = "exists";
 		}
 		$amm->close();
+		$checkname->close();
 	}
 	header("Location:index.php?msg=$report");
 	exit();
