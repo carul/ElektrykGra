@@ -1,7 +1,7 @@
 <?php
 $timestamp = new DateTime();
 $timestamp = $timestamp->getTimestamp();
-$timetofinish = $pdata[7] - $timestamp;
+$timetofinish = $pdata[8] - $timestamp;
 $ifmission = "Możesz teraz rozpocząć kolejna misję!";
 if ($timetofinish > 0){
 	$timetofinish = gmdate("H:i:s", $timetofinish);
@@ -9,7 +9,7 @@ if ($timetofinish > 0){
 }
 $color = "black";
 if($pdata[4] < 1000 and $pdata[4] > -1000){
-	$color = "#917b13";
+	$color = "black";
 }
 elseif($pdata[4] < 2000 and $pdata[4] >= 1000){
 	$color = "#68aa1b";
@@ -86,7 +86,7 @@ echo "<table>
 			Doświadczenie:
 		</td>
 		<td>
-			".$pdata[2]."/".calcexp($basicexp, $pdata[1])."
+			".$pdata[2]."/".(int)calcexp($basicexp, $pdata[1])."
 		</td>
 	</tr>
 </table>";

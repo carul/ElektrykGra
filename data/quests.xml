@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests_list>
 	<quest>
-		<name>Idź do szkoły</name>
-		<time>300</time>
-		<rrank>0</rrank>
-		<influence>0</influence>
-		<award>10</award>
-		<xp>50</xp>
+		<name>Ucz się na kartkówkę z polskiego</name>
+		<time>1000</time>
+		<rrank>50</rrank>
+		<influence>40</influence>
+		<award>20</award>
+		<xp>60</xp>
+	</quest>
+	<quest>
+		<name>Odrób zadanie</name>
+		<time>500</time>
+		<rrank>40</rrank>
+		<influence>20</influence>
+		<award>15</award>
+		<xp>30</xp>
 	</quest>
 	<quest>
 		<name>Przebierz buty</name>
@@ -17,11 +25,35 @@
 		<xp>10</xp>
 	</quest>
 	<quest>
+		<name>Idź do szkoły</name>
+		<time>300</time>
+		<rrank>0</rrank>
+		<influence>0</influence>
+		<award>10</award>
+		<xp>50</xp>
+	</quest>
+	<quest>
 		<name>Zaklej gumę pod ławką</name>
 		<time>60</time>
 		<rrank>0</rrank>
 		<influence>-10</influence>
 		<award>0</award>
 		<xp>10</xp>
+	</quest>
+	<quest>
+		<name>Idź do kibla pozbijać piątki</name>
+		<time>200</time>
+		<rrank>-40</rrank>
+		<influence>-8</influence>
+		<award>15</award>
+		<xp>10</xp>
+	</quest>
+	<quest>
+		<name>Napisz coś flamastrem na boku ławki</name>
+		<time>200</time>
+		<rrank>-60</rrank>
+		<influence>-30</influence>
+		<award>0</award>
+		<xp>20</xp>
 	</quest>
 </quests_list>

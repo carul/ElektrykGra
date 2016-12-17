@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div id="titletext">
-		Gra Elektryk
+		Gra Elektryk<font size="3">alpha</font>
 	</div>
 	<div class="mainform" id="login">
 		<?php 
@@ -127,8 +127,8 @@
 				if($_GET["msg"] == "exists"){
 					echo "<font color=\"red\">Użytkownik o tej nazwie już istnieje. Proszę podać inną nazwę.</font>";
 				}
-				if($_GET["msg"] == "msloginf"){
-					echo "<font color=\"red\">Taki użytkownik nie istnieje, lub podano zły login lub hasło.</font>";
+				if($_GET["msg"] == "loginf"){
+					echo "<font color=\"red\">Taki użytkownik nie istnieje, lub podano zły login/hasło.</font>";
 				}
 			?>
 	</div>

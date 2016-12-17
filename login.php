@@ -20,7 +20,7 @@
 	}
 	else{
 		$report = "loginf";
-		header("Location:index.php?msg$report");
+		header("Location:index.php?msg=$report");
 		exit();
 	}
 ?>

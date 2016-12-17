@@ -52,6 +52,12 @@
 	function goranking(){
 		window.location.href = 'game.php?page=ranking';
 	}
+	function golout(){
+		window.location.href = 'logout.php';
+	}
+	function gonews(){
+		window.location.href = 'game.php?page=news';
+	}
 </script>
 </head>
 <body>
@@ -87,6 +93,12 @@
 	<div class="mbtn" onclick="goranking()">
 		Najlepsi uczniowie
 	</div>
+	<div class="mbtn" onclick="golout()">
+		Wyloguj
+	</div>
+	<div class="mbtn" onclick="gonews()">
+		Nowości
+	</div>
 </div>
 <div id="content">
 <?php
@@ -103,6 +115,9 @@
 		elseif($_GET["page"] == "ranking"){
 			include "php/ranking.php";
 		}
+		elseif($_GET["page"] == "news"){
+			echo "<div id=\"twrapfull\"><iframe src=\"news.html\" width=\"100%\" height=\"100%\"></iframe></div>";
+		}
 		else{
 			echo "Podana strona nie została znaleziona.";
 		}
@@ -114,6 +129,9 @@
 		}
 		if($msg == "notyet"){
 			echo "<div class=\"notifier\">Jesteś jeszcze na misji, nie możesz rozpocząć kolejnej!</div>";
+		}
+		if($msg == "brank"){
+			echo "<div class=\"notifier\">Twoja ranga jest niewystarczająca, aby zacząć tę misję!</div>";
 		}
 	}
 ?>
