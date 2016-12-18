@@ -138,3 +138,13 @@ table{
 .rankingtable td, th{
 	border: 1px solid black;
 }
+
+a{
+	text-decoration: none;
+	color: maroon;
+}
+
+a:visited{
+	text-decoration: none;
+	color: maroon;
+}

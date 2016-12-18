@@ -1,9 +1,10 @@
 <?php
 	$missions = file_get_contents("data/quests.xml");
 	$missions = new SimpleXMLElement($missions);
+	echo "<link rel=\"stylesheet\" href=\"css/ntable.css\">";
 	echo "<fieldset>
 	<legend>Misje</legend>
-	<table id=\"questt\">
+	<table>
 	";
 	echo "<tr><th>Misja</th><th>Czas</th><th>Wymagana ranga</th><th>Wpływ na rangę</th>
 	<th>Pieniądze</th><th>Doświadczenie</th><th> </th></tr>";

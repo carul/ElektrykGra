@@ -12,10 +12,10 @@
 	}
 	if(isset($_SESSION['user_name']) and isset($_GET['id'])){
 		include "database.php";
-		$playerid = $db->query("SELECT * FROM users WHERE login='".$_SESSION['user_name']."'");
+		$playerid = $db->query("SELECT * FROM $userbasename WHERE login='".$_SESSION['user_name']."'");
 		$playerid = $playerid->fetch_row();
 		$playerid = $playerid[0];
-		$player = $db->query("SELECT * FROM playerdata WHERE ID ='$playerid'");
+		$player = $db->query("SELECT * FROM $userdataname WHERE ID ='$playerid'");
 		$player = $player->fetch_row();
 		$gold = $player[3];
 		$experience = $player[2];
