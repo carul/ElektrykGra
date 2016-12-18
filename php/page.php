@@ -8,10 +8,7 @@ if ($timetofinish > 0){
 	$ifmission = $timetofinish;
 }
 $color = "black";
-if($pdata[4] < 1000 and $pdata[4] > -1000){
-	$color = "black";
-}
-elseif($pdata[4] < 2000 and $pdata[4] >= 1000){
+if($pdata[4] < 2000 and $pdata[4] >= 1000){
 	$color = "#68aa1b";
 }
 elseif($pdata[4] < 3000 and $pdata[4] >= 2000){
