@@ -1,5 +1,23 @@
 <?php
 	include "database.php";
+	function getcolorrank($rank){
+		$trank = $rank;
+		if($rank > 7000){
+			$rank = 7000;
+		}
+		elseif($rank < -7000){
+			$rank = -7000;
+		}
+		$rank = $rank/7000;
+		if($rank > 0){
+			$rstring = "<span style=\"color: rgb(0,". (int)(255*$rank). ",0); background-color: rgba(255,255,255,1);\">".$trank."</span>";
+		}
+		else{
+			$rstring = "<span style=\"color: rgb(". (int)(255*-$rank). ",0,0); background-color: rgba(255,255,255,1);\">".$trank."</span>";
+		}
+		return $rstring;
+	}
+
 	if(isset($_GET['pid'])){
 		$id = $_GET["pid"];
 		$pdata = $db->query("SELECT * FROM $userdataname WHERE ID='$id'");
@@ -7,41 +25,7 @@
 			$pname = $db->query("SELECT * FROM $userbasename WHERE ID='$id'");
 			$pname = $pname->fetch_row()[1];
 			$pdata = $pdata->fetch_row();
-			$color = "black";
-			if($pdata[4] < 2000 and $pdata[4] >= 1000){
-				$color = "#68aa1b";
-			}
-			elseif($pdata[4] < 3000 and $pdata[4] >= 2000){
-				$color = "#57bc1d";
-			}
-			elseif($pdata[4] < 4000 and $pdata[4] >= 3000){
-				$color = "#48ce20";
-			}
-			elseif($pdata[4] < 5000 and $pdata[4] >= 4000){
-				$color = "#36e223";
-			}
-			elseif($pdata[4] >= 5000){
-				$color = "#21f927";
-			}
-			elseif($pdata[4] <= -1000 and $pdata[4] > -2000){
-				$color = "#907e13";
-			}
-			elseif($pdata[4] <= -2000 and $pdata[4] > -3000){
-				$color = "#a7620f";
-			}
-			elseif($pdata[4] <= -3000 and $pdata[4] > -4000){
-				$color = "#c83e09";
-			}
-			elseif($pdata[4] <= -4000 and $pdata[4] > -5000){
-				$color = "#e41e05";
-			}
-			elseif($pdata[4] <= -5000 and $pdata[4] > -6000){
-				$color = "#ef1203";
-			}
-			elseif($pdata[4] <= -6000){
-				$color = "#ff0000";
-			}
-			$color = "<span style=\"color: $color\">";
+			$items = explode(" ", $pdata[7]);
 			echo "<fieldset>";
 			echo "<legend>".$pname."</legend>";
 			echo "<table id=\"playerinfo\">
@@ -58,7 +42,7 @@
 					Ranga:
 				</td>
 				<td>
-					".$color.$pdata[4]."</span>
+					".getcolorrank($pdata[4])."</span>
 				</td>
 			</tr>
 				<td>
@@ -67,6 +51,15 @@
 				<td>
 					".$pdata[2]."/".(int)calcexp($basicexp, $pdata[1])."
 				</td>
+			</tr>
+			<tr>
+				<td style=\"vertical-align: text-top;\">
+					<hr/>
+					Ekwipunek:
+				</td>
+				<td>";
+					include "showitems.php";
+				echo "</td>
 			</tr>
 			</table></fieldset>";
 		}

@@ -1,21 +1,36 @@
 body{
-	background-color: #ffffff;
+	margin: 0; 
+	font-family: 'Lato', sans-serif;
+	background-image: url("../img/background.png");
 }
 
 .mainform{
-	background-color: #a5a5a5;
+	text-transform: uppercase;
+	background-color: #303030;
 	font-weight: bold;
-	box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
 	margin: auto;
 	text-align: center;
+	background-image: url("../img/form-background.png");
+	padding-bottom: 10px;
+	width: 100%;
+
 }
 
 .formtitle{
-	background-color: #878787;
+	background-image: url("../img/form-background.png");
 	text-align: center;
 	width: 100%;
+	padding: 10px 0px 10px 0px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+	text-transform: uppercase;
 }
-
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
 .mainform form table tr td:first-child{
 	text-align: right;
   font-size: 1.3em;
@@ -26,24 +41,18 @@ body{
 }
 
 .btn {
-  background: #586b78;
-  background-image: -webkit-linear-gradient(top, #586b78, #182b36);
-  background-image: -moz-linear-gradient(top, #586b78, #182b36);
-  background-image: -ms-linear-gradient(top, #586b78, #182b36);
-  background-image: -o-linear-gradient(top, #586b78, #182b36);
-  background-image: linear-gradient(to bottom, #586b78, #182b36);
+  background: #303030;
   color: #ffffff;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid #000;
+  margin: 3px;
+  width: 100px;
 }
 
 .btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #525252;
   text-decoration: none;
 }
 
@@ -62,15 +71,15 @@ body{
   padding: 10px 20px;
   border: 1px solid #b7b7b7;
   -webkit-border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 5px;
   font: normal 16px/normal "Times New Roman", Times, serif;
-  color: rgba(0,142,198,1);
+  color: #303030;
   -o-text-overflow: clip;
   text-overflow: clip;
   background: rgba(252,252,252,1);
-  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
-  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         0px 0px 1px 0px rgba(0, 0, 0, 0.75);
   -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -78,6 +87,10 @@ body{
 }
 
 .inputfield:hover {
-  -webkit-box-shadow: 2px 2px 2px 0 rgba(99,99,99,1) inset;
-  box-shadow: 2px 2px 2px 0 rgba(99,99,99,1) inset;
+  border: 1px solid #303030;
+}
+#login{
+	background-color: #969696;
+	text-transform: uppercase;
+	padding: 5px;
 }

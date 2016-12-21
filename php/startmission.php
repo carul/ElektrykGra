@@ -23,8 +23,47 @@
 		$questdata  = file_get_contents("../data/quests.xml");
 		$questdata = new SimpleXMLElement($questdata);
 		$questdata = $questdata->quest[(int)$_GET['id']];
-		$gold += $questdata->award;
-		$experience += $questdata->xp;
+		$expmodifier = 1;
+		$goldmodifier = 1;
+		$timemodifier = 1;
+		$expplus = 0;
+		$goldplus = 0;
+		$timeplus = 0;
+		$playeritems = $db->query("SELECT ITEMS FROM $userdataname WHERE ID='$playerid'");
+		$items = file_get_contents("../data/items.xml");
+		$items= new SimpleXMLElement($items);
+		$playeritems = explode(" ", $playeritems->fetch_row()[0]);
+		for($i = 0; $i < sizeof($playeritems); $i++){
+			if(is_numeric($playeritems[$i])){
+				for($j = 0; $j < sizeof($items); $j++){
+					if($playeritems[$i] == $items->item[$j]->id){
+						echo "player ma item.";
+						if($items->item[$j]->modifpercent == "YES"){
+							switch($items->item[$j]->modift){
+								case "Q":
+									$timemodifier -= 0.01*$items->item[$j]->modifa;
+									break;
+								case "G":
+									$goldmodifier += 0.01*$items->item[$j]->modifa;
+									break;
+							}
+						}
+						else{
+							switch($items->item[$j]->modift){
+								case "Q":
+									$timeplus = $items->item[$j]->modifa;
+									break;
+								case "G":
+									$goldmodifier = $items->item[$j]->modifa;
+									break;
+							}	
+						}
+					}
+				}
+			}
+		}
+		$gold += $questdata->award * $goldmodifier + $goldplus;
+		$experience += $questdata->xp * $expmodifier + $expplus;
 		$rank += $questdata->influence;
 		$timestamp = new DateTime();
 		$timestamp = $timestamp->getTimestamp();
@@ -33,7 +72,6 @@
 			header("Location:../game.php?page=missions&msg=$msg");
 			exit();
 		}
-		$timestamp += $questdata->time;
 		$bad = false;
 		$rrank = $questdata->rrank;
 		if($rrank > 0){
@@ -50,6 +88,7 @@
 			header("Location:../game.php?page=missions&msg=brank");
 			exit();
 		}
+		$timestamp += $questdata->time * $timemodifier - $timeplus;
 		$limit = calcexp(100, $player[1]);
 		$t1 = $player[2]-$limit;
 		$t1*=-1;

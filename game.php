@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Lato&amp;subset=latin-ext" rel="stylesheet"> 
 <script src="js/jquery-3.1.1.min.js"></script>
 <script>
 	$(document).ready(function(){
@@ -135,13 +136,25 @@
 	if(isset($_GET['msg'])){
 		$msg = $_GET['msg'];
 		if($msg == "missuccess"){
-			echo "<div class=\"notifier\">Misja rozpoczęta!</div>";
+			echo "<div class=\"notifier good\">Misja rozpoczęta!</div>";
 		}
 		if($msg == "notyet"){
-			echo "<div class=\"notifier\">Jesteś jeszcze na misji, nie możesz rozpocząć kolejnej!</div>";
+			echo "<div class=\"notifier bad\">Jesteś jeszcze na misji, nie możesz rozpocząć kolejnej!</div>";
 		}
 		if($msg == "brank"){
-			echo "<div class=\"notifier\">Twoja ranga jest niewystarczająca, aby zacząć tę misję!</div>";
+			echo "<div class=\"notifier bad\">Twoja ranga jest niewystarczająca, aby zacząć tę misję!</div>";
+		}
+		if($msg == "nfound"){
+			echo "<div class=\"notifier bad\">Nie znaleziono gracza</div>";
+		}
+		if($msg == "ngold"){
+			echo "<div class=\"notifier bad\">Nie stać Cię na ten przedmiot!</div>";	
+		}
+		if($msg == "nlevl"){
+			echo "<div class=\"notifier bad\">Nie masz wystarczającego poziomu, aby kupić ten przedmiot!</div>";	
+		}
+		if($msg == "sbuy"){
+			echo "<div class=\"notifier good\">Zakupiono przedmiot!</div>";		
 		}
 	}
 ?>

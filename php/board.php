@@ -20,7 +20,7 @@
 			$p = $db->query("SELECT login FROM $userbasename WHERE ID='".$post[0]."'");
 			echo "<div class=\"post\">";
 			echo "<div class=\"postername\"><a href=\"game.php?page=showplayer&pid=".$post[0]."\">".$p->fetch_row()[0]."</a></div>";
-			echo "<div class=\"postcontent\">".$post[1]."</div>";
+			echo "<div class=\"postcontent\">".strip_tags($post[1])."</div>";
 			echo "<div class=\"postdate\">".gmdate("Y-m-d H:i:s", $post[2])."</div>";
 			echo "</div>";
 		}

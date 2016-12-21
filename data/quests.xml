@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests_list>
 	<quest>
+		<name>Idź na korepetycje</name>
+		<time>1800</time>
+		<rrank>220</rrank>
+		<influence>120</influence>
+		<award>30</award>
+		<xp>220</xp>
+	</quest>
+	<quest>
+		<name>Lutuj mikroprocesory w B</name>
+		<time>700</time>
+		<rrank>130</rrank>
+		<influence>30</influence>
+		<award>50</award>
+		<xp>70</xp>
+	</quest>
+	<quest>
 		<name>Ucz się na kartkówkę z polskiego</name>
 		<time>1000</time>
 		<rrank>50</rrank>
@@ -55,5 +71,21 @@
 		<influence>-30</influence>
 		<award>0</award>
 		<xp>20</xp>
+	</quest>
+	<quest>
+		<name>Fajeczka w C</name>
+		<time>100</time>
+		<rrank>-180</rrank>
+		<influence>-40</influence>
+		<award>0</award>
+		<xp>40</xp>
+	</quest>
+	<quest>
+		<name>Sklep frajera</name>
+		<time>400</time>
+		<rrank>-300</rrank>
+		<influence>-70</influence>
+		<award>100</award>
+		<xp>30</xp>
 	</quest>
 </quests_list>

@@ -20,5 +20,12 @@
 		echo "</tr>";
 	}
 	echo "</table>
-	</fieldset>"
+	</fieldset>";
+	echo "<fieldset>
+	<legend>Szukaj gracza</legend>
+	<form  action=\"php/searchplayer.php\" method=\"get\">
+		<span style=\"color: white;\">Nazwa gracza: <input type=\"text\" name=\"searchname\" class=\"snd\"></span><br/>
+		<input type=\"submit\" value=\"Szukaj\" class=\"snd\"><br/>
+	</form>
+	</fieldset>";
 ?>

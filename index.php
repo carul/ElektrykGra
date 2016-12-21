@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>Gra Elektryk</title>
 	<link rel="stylesheet" href="css/main.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var rand = Math.floor((Math.random() * 999) + 1);
@@ -26,7 +27,7 @@
 </head>
 <body>
 	<div id="titletext">
-		Gra Elektryk<font size="3">alpha</font>
+		<img src="img/logo.png"/>
 	</div>
 	<div class="mainform" id="login">
 		<?php 
@@ -95,10 +96,11 @@
 				</tr>
 				<tr>
 					<td>
-						Przepisz kod(<span id="ccode"></span>):
+						<font size="4" />kod:<br />
+						(<span id="ccode"></span>)
 					</td>
 					<td>
-						<input type="number" id="ccaptcha" class="inputfield"><br/>
+						<input type="text" id="ccaptcha" class="inputfield" onkeyup="this.value=this.value.replace(/\D/g,'')"><br/>
 					</td>
 				</tr>
 			</table>

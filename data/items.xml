@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items_list>
+	<item>
+		<id>0</id>
+		<name>iJust 2</name>
+		<price>100</price>
+		<modift>Q</modift>
+		<modifa>20</modifa>
+		<modifpercent>YES</modifpercent>
+		<rlv>2</rlv>
+	</item>
+	<item>
+		<id>1</id>
+		<name>Plecak supreme</name>
+		<price>500</price>
+		<modift>G</modift>
+		<modifa>20</modifa>
+		<modifpercent>YES</modifpercent>
+		<rlv>5</rlv>
+	</item>
+</items_list>
