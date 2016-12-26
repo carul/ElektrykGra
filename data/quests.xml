@@ -7,6 +7,7 @@
 		<influence>120</influence>
 		<award>30</award>
 		<xp>220</xp>
+		<t>krp</t>
 	</quest>
 	<quest>
 		<name>Lutuj mikroprocesory w B</name>
@@ -15,6 +16,7 @@
 		<influence>30</influence>
 		<award>50</award>
 		<xp>70</xp>
+		<t>mkp</t>
 	</quest>
 	<quest>
 		<name>Ucz się na kartkówkę z polskiego</name>
@@ -23,6 +25,7 @@
 		<influence>40</influence>
 		<award>20</award>
 		<xp>60</xp>
+		<t>ukrk</t>
 	</quest>
 	<quest>
 		<name>Odrób zadanie</name>
@@ -31,6 +34,7 @@
 		<influence>20</influence>
 		<award>15</award>
 		<xp>30</xp>
+		<t>zdn</t>
 	</quest>
 	<quest>
 		<name>Przebierz buty</name>
@@ -39,6 +43,7 @@
 		<influence>10</influence>
 		<award>0</award>
 		<xp>10</xp>
+		<t>pbt</t>
 	</quest>
 	<quest>
 		<name>Idź do szkoły</name>
@@ -47,6 +52,7 @@
 		<influence>0</influence>
 		<award>10</award>
 		<xp>50</xp>
+		<t>szk</t>
 	</quest>
 	<quest>
 		<name>Zaklej gumę pod ławką</name>
@@ -55,6 +61,7 @@
 		<influence>-10</influence>
 		<award>0</award>
 		<xp>10</xp>
+		<t>gm</t>
 	</quest>
 	<quest>
 		<name>Idź do kibla pozbijać piątki</name>
@@ -63,6 +70,7 @@
 		<influence>-8</influence>
 		<award>15</award>
 		<xp>10</xp>
+		<t>kib</t>
 	</quest>
 	<quest>
 		<name>Napisz coś flamastrem na boku ławki</name>
@@ -71,6 +79,7 @@
 		<influence>-30</influence>
 		<award>0</award>
 		<xp>20</xp>
+		<t>flm</t>
 	</quest>
 	<quest>
 		<name>Fajeczka w C</name>
@@ -79,6 +88,7 @@
 		<influence>-40</influence>
 		<award>0</award>
 		<xp>40</xp>
+		<t>faj</t>
 	</quest>
 	<quest>
 		<name>Sklep frajera</name>
@@ -87,5 +97,6 @@
 		<influence>-70</influence>
 		<award>100</award>
 		<xp>30</xp>
+		<t>skf</t>
 	</quest>
 </quests_list>

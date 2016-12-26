@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<achievements_list>
+		<achievement>
+			<id>0</id>
+			<dcolor>red</dcolor>
+			<name>Alpha-tester</name>
+			<hinfo>Uczestniczył w testach alfa</hinfo>
+		</achievement>
+		<achievement>
+			<id>1</id>
+			<dcolor>green</dcolor>
+			<name>Quester</name>
+			<hinfo>Ukończył minimum 10 questów</hinfo>
+		</achievement>
+		<achievement>
+			<id>2</id>
+			<dcolor>blue</dcolor>
+			<name>Wykształcony</name>
+			<hinfo>Ukończył misję "Idź na korepetycje"</hinfo>
+		</achievement>
+		<achievement>
+			<id>3</id>
+			<dcolor>darkred</dcolor>
+			<name>Fajter</name>
+			<hinfo>Ukończył misję "Sklep frajera"</hinfo>
+		</achievement>
+		<achievement>
+			<id>4</id>
+			<dcolor>#009900</dcolor>
+			<name>Quester 2</name>
+			<hinfo>Ukończył minimum 50 questów</hinfo>
+		</achievement>
+		<achievement>
+			<id>5</id>
+			<dcolor>#80ff80</dcolor>
+			<name>Quester 3</name>
+			<hinfo>Ukończył minimum 200 questów</hinfo>
+		</achievement>
+</achievements_list>

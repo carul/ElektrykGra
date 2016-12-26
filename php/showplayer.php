@@ -26,6 +26,7 @@
 			$pname = $pname->fetch_row()[1];
 			$pdata = $pdata->fetch_row();
 			$items = explode(" ", $pdata[7]);
+			$achievs = explode(" ", $pdata[6]);
 			echo "<fieldset>";
 			echo "<legend>".$pname."</legend>";
 			echo "<table id=\"playerinfo\">
@@ -58,7 +59,16 @@
 					Ekwipunek:
 				</td>
 				<td>";
-					include "showitems.php";
+					include "user/showitems.php";
+				echo "</td>
+			</tr>
+			<tr>
+				<td style=\"vertical-align: text-top;\">
+					<hr/>
+					Osiągnięcia:
+				</td>
+				<td>";
+					include "user/showachievements.php";
 				echo "</td>
 			</tr>
 			</table></fieldset>";

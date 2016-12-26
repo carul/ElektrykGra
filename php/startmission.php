@@ -20,6 +20,8 @@
 		$gold = $player[3];
 		$experience = $player[2];
 		$rank = $player[4];
+		$achievs = $player[6];
+		$finquesta = $player[9];
 		$questdata  = file_get_contents("../data/quests.xml");
 		$questdata = new SimpleXMLElement($questdata);
 		$questdata = $questdata->quest[(int)$_GET['id']];
@@ -102,6 +104,36 @@
 		if ($limit < $player[2])
 			$db->query("UPDATE $userdataname SET EXPERIENCE='$t1', GOLD='$gold', RANK='$rank', LASTQUESTFINISH='$timestamp', LEVEL='$t2' WHERE ID='$playerid'");
 		$msg = "missuccess";
+		$achievse = explode (" ", $achievs);
+		$finquesta++;
+		if($finquesta >= 10){
+			if(!in_array("1", $achievse)){
+				$achievs .= "1 ";
+			}
+		}
+		if($finquesta >= 50){
+			if(!in_array("4", $achievse)){
+				$achievs .= "4 ";
+			}
+		}
+		if($finquesta >= 200){
+			if(!in_array("5", $achievse)){
+				$achievs .= "5 ";
+			}
+		}
+		$t = $questdata->t;
+		if($t == "skf" and !in_array("3", $achievse)){
+			$achievs .= "3 ";
+		}
+		elseif($t == "krp" and !in_array("2", $achievse)){
+			$achievs .= "2 ";
+		}
+		if ($timestamp < 1485907200){
+			if(!in_array("0", $achievse)){
+				$achievs .= "0 ";
+			}
+		}
+		$db->query("UPDATE $userdataname SET FINQUESTA='$finquesta', ACHIEVEMENTS='$achievs' WHERE ID='$playerid'");
 		header("Location:../game.php?page=missions&msg=$msg");
 		exit();
 	}

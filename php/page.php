@@ -28,6 +28,7 @@ if ($timetofinish > 0){
 }
 
 $items = explode(" ", $pdata[7]);
+$achievs = explode(" ", $pdata[6]);
 
 echo "<fieldset>";
 echo "<legend>". $login . "</legend>" ;
@@ -78,7 +79,15 @@ echo "<table id=\"playerinfo\">
 			Ekwipunek:
 		</td>
 		<td>";
-			include "showitems.php";
+			include "user/showitems.php";
+		echo "</td>
+	</tr>
+	<tr>
+		<td style=\"vertical-align: text-top; text-align: left;\">
+			<hr/>
+			Osiągnięcia:
+		</td><td>";
+			include "user/showachievements.php";
 		echo "</td>
 	</tr>
 </table>";
